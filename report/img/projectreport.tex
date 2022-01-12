@@ -1,0 +1,100 @@
+\documentclass[conference]{IEEEtran}
+% The preceding line is only needed to identify funding in the first footnote. 
+% If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\begin{document}
+
+\title{Applied AI in Biomedicine Project Report - Development of H.T.F. Deep-Learning Peak Classifier   }
+
+\author{
+Alberto Rota
+    \IEEEauthorblockA{ \\
+    \textit{Person Code: 10615751}\\
+    \textit{Student Number: 964662} \\
+    \href{mailto:alberto2.rota@mail.polimi.it}{alberto2.rota@mail.polimi.it}}
+\and
+Gabriele Santicchi 
+    \IEEEauthorblockA{ \\
+    \textit{Person Code: 10579046}\\
+    \textit{Student Number: 969088}  \\
+    \href{mailto:gabriele.santicchi@mail.polimi.it}{gabriele.santicchi@mail.polimi.it}}
+}
+
+\maketitle
+\section{Context}
+    The goal of this project is to build a classification model that properly 
+    annotates each peaks as Normal, PAC (supraventricular beats) or PVC (ventricular beats).
+    The available dataset is composed of 2-lead ECG signal and R peaks position of  
+    105 patient recordings.  
+\section{Introduction}
+    Electrocardiogram (ECG) signals records the electrical activity of the human hearts 
+    and consist of several waveforms (P, QRS, and T). The duration and shape of each 
+    waveform and the distances between different peaks are used to diagnose cardiovascular heart
+    diseases (CVD). Premature atrial contractions (PAC) and premature ventricular contractions (PVC) are among 
+    the most common forms of arrhythmias; the first results from premature electrical activation 
+    originating in the atria of the heart, while the second one is caused by a premature 
+    electrical activation originating in the ventricles.
+    As the presence of frequent PACs and PVCs are associated with a higher risk of unfavorable prognosis[1][2], 
+    the accurate recognition of these abnormal beats is strictly required. 
+    The aim of the this work is to design a deep-learning ensemble model that properly classifies
+    all the peaks in a recording, without requiring the extraction of ECG features. 
+    The History-Time-Frequency Classifier analyzes each samples in both the time and frequency domain, and take as input also the 
+    labels assigned to the previous two samples. 
+    The miss-classification error on the test set was around 3\%, highlighting the potential of our classifier. 
+
+
+\subsection{Data Loading}
+    sceggli il megglio
+\subsection{Splitting}
+    scegli eccampus
+\subsection{Preprocessing}
+    ti aspecto
+\section{The H.T.F. Model}
+1. Parlare del class imbalance? Undersampling? 
+2. Mettere il graphviz del modello? 
+\subsection{H as History}
+During a first inspection phase, an analysis on the distribution of pathological beats has been performed. 
+In fig. 1a, the histogram reports the abnormal interpeak distances computed over all the recordings, confirming that 
+PACs and PVCs often occurs in repeated patterns[3][4]. For these reasons, the involvement of the labels assigned to 
+the previous peak could help in predicting more precisely the current peak. Considering the interpeak distances distributions, 
+in this classifier the two previous labels has been added as further inputs of the ensemble model.
+\ref{fig:graphs}
+\begin{figure}[]
+    \includegraphics[width=\linewidth]{hist_plot.png}
+    \caption{Pathological interpeak distances over the 105 recordings. rca troia non si legge niente }
+    \label{fig:graphs}
+\end{figure}
+\subsection{T as Time}
+\subsection{F as Frequency}
+The last branch of this model consists in a frequency-domain classifier by a proper Fourier Transformation of the inputs.
+In order to apply the Fourier Transform, the stationarity hypothesis has been assumed for each window. This is not an heavy assumption, since
+the inputs length is very short and most part of the window consists in the peak recorded. 
+The classifier consist of multiple CNN-ReLU-MaxPooling stacks. A low filter size has been chosen to get useful features in afew amount of samples at a time.
+After the application of the FFT on the input signal, the output of the CNN layer is concatenated with the two history-labels as in the time model. 
+Finally, a dense layer with a softmax AF provides the probability assigned to the three labels. 
+
+\section{Training}
+    
+\section{Results}
+
+% [1] Huang BT, Huang FY, Peng Y, et al. Relation of premature atrial complexes with stroke and death: 
+% Systematic review and meta-analysis. Clin Cardiol. 2017;40(11):962-969. doi:10.1002/clc.22780
+% [2] ideo Hirose, Shizukiyo Ishikawa, Tadao Gotoh, Tomoyuki Kabutoya, Kazunori Kayaba, Eiji Kajii,
+% Cardiac mortality of premature ventricular complexes in healthy people in Japan,
+% Journal of Cardiology, Volume 56, Issue 1,2010,Pages 23-26, ISSN 0914-5087,
+% [3]Farzam K, Richards JR. Premature Ventricular Contraction. [Updated 2021 Dec 13]. 
+% In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2022 Jan-. 
+% Available from: https://www.ncbi.nlm.nih.gov/books/NBK532991/
+% [4]Boon-Hor Chong, Vincent Pong, Kwok-Fai Lam, Shasha Liu, Ming-Liang Zuo, Yuk-Fai Lau, Chu-Pak Lau, 
+% Hung-Fat Tse, Chung-Wah Siu, Frequent premature atrial complexes predict new occurrence of atrial fibrillation 
+% and adverse cardiovascular events, EP Europace, Volume 14, Issue 7, July 2012, Pages 942–947, https://doi.org/10.1093/europace/eur389
+
+\end{document}
+

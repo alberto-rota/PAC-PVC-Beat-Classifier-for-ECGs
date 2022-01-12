@@ -7,15 +7,25 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{tabularx}
+\usepackage{lipsum}  
+\usepackage{float}  
 
 % COMMANDS
 \newcommand{\R}{\mathbb{R}}
-\newcommand{\fig}[1]{\textit{Figure \ref{1}}}
-\newcommand{\eq}[1]{\textit{Equation \ref{1}}}
-
+\newcommand{\fig}[1]{\textit{Figure \ref{#1}}}
+\newcommand{\eq}[1]{\textit{Equation \ref{#1}}}
+\newcommand{\tabl}[1]{\textit{Table \ref{#1}}}
+\newcommand{\addfigure}[3]{
+    \begin{figure}
+        \includegraphics[width=\linewidth]{#1}
+        \caption{#2}
+        \label{#3}
+    \end{figure}
+}
 \begin{document}
 
-\title{Applied AI in Biomedicine - Workshop Report}
+% TITLE
+\title{ - Applied AI in Biomedicine Workshop Report - Development of the HTF Deep-Learning Heartbeat Classifier   }
 
 % AUTHORS
 \author{
@@ -51,9 +61,10 @@
     activation originating in the atria of the heart, while the second
     one is caused by a premature electrical activation originating in
     the ventricles. As the presence of frequent PACs and PVCs are
-    associated with a higher risk of unfavorable prognosis[1][2], the
-    accurate recognition of these abnormal beats is strictly required.
-    The aim of the this work is to design a deep-learning ensemble
+    associated with a higher risk of unfavorable prognosis \cite{relation_of}
+    \cite{cardiac_mortality}, the accurate recognition of these abnormal beats 
+    is strictly required.
+    The aim of this work is to design a deep-learning ensemble
     model that properly classifies all the peaks in a recording,
     without requiring the extraction of ECG features. The
     History-Time-Frequency Classifier analyzes each samples in both
@@ -62,62 +73,243 @@
     error on the test set was around 3\%, highlighting the potential
     of our classifier. 
 
+    \addfigure
+        {img/example.jpg}
+        {Annotated ECGs from a sample patient}
+        {fig:examples}
+
 \subsection{Dataset}
-    The dataset consists of ECGs recorded from 105 patients
+    The dataset consists of 105 2-leads ECGs of 30 minutes recorded from 105 patients
+    with two different sampling frequencies: more specifically, 65 patients were
+    recorded with $f_s = 128 Hz$ and the remaining 40 patients with $f_s =
+    250Hz$. The recordings are annotated with the position of the R-peaks and
+    their ground truth classification. An example is provided in \fig{fig:examples}.
+
 \section{Data Preprocessing}
-The available raw dataset undergoes a pre-processing phase necessary for the
-optimal interfacing between the data and the model.
+    The available raw dataset undergoes a pre-processing phase necessary for the
+    optimal interfacing between the data and the model. 
+
 \subsection{Exploratory Data Analysis}
+    First and foremost, the acquisition frequencies are made uniform in the
+    whole dataset by undersampling the recording acquired at $250Hz$. This
+    procedure is preferred to the oversampling of low-resolution acquisition as
+    it may introduce biases due to the interpolation method. Moreover, the ECG
+    features are preserved after the undersampling, further justifying this
+    choice. No missing data is found in the recordings, hence there is no need
+    to handle this kind of issue.
+    An in-depth inspection of the dataset revealed, still, mismatches in the
+    annotations of the R-peak positions, as for patient \textit{S005} and
+    \textit{S009} the last heartbeat in the recording is labelled with a
+    timestamp bigger than the signal length. In a conservative approach, given
+    the very high number of heartbeats in the whole dataset (circa 244336), the
+    two mislabelled R-peaks are removed.
+
+    \addfigure
+        {img/windowing.jpg}
+        {Comparison of window splitting strategies. The \textit{RRR-based} (left) clearly shows
+        inconsistency in the width; the \textit{fixed-width} (right) displays how
+        adjacent peaks are included in the window; the \textit{adjusted RRR-based}
+        (center) shows, in cases like the uppermost window, the padding used to match
+        the dimensions}
+        {fig:windowing}.
 
 \subsection{Signal Windowing}
-The heartbeat-by-heartbeat classification that the model performs implies the
-necessity of splitting the 30 minutes recording of each patient in windows, each
-one to be processed separately by the network:
-choosing the proper width and the optimal windowing approach is key in
-obtaining the best model performance. Three different approaches have been taken
-into consideration when splitting the windows, which are graphically compared in
-\fig{fig:windows}.
-\begin{figure}
-    \includegraphics[width=\linewidth]{img/histograms.jpg}
-    \label{fig:windows}
-\end{figure}
+    The heartbeat-by-heartbeat classification that the model performs implies the
+    necessity of splitting the 30 minutes recording of each patient in windows, each
+    one to be processed separately by the network:
+    choosing the proper width and the optimal windowing approach is key in
+    obtaining the best model performance. Three different approaches have been taken
+    into consideration when splitting the windows:
+    \begin{itemize}
+        \item \textbf{RRR-based: }Each heartbeat is considered as starting from
+        the R-peak of the previous one and ending to the R-peak of the
+        following one (with some margin, 5\% of the window width by default, in
+        order to not include the QR and RS
+        slopes of the adjacent beats). This splitting strategy keeps the highest
+        possible amount of information inside the
+        window but, crucially,
+        produces windows of inconsistent width, which depends on the patient
+        heart-rate.
+        \item \textbf{Fixed width: }A predefined width $w$ (in samples) is
+        chosen and each window is considered as starting from $x_{peak}-w/2$ to
+        $x_{peak}+w/2$. This approach assures a consistent window size and,
+        additionally, makes sure that the R-peak is centered in the window. For
+        patients with a high heart-rate though, adjacent R-peaks may be
+        unavoidably included in the window.
+        \item \textbf{Adjusted RRR-based: }This approach combines the two
+        previously described strategies by initially performing the \textit{RRR-splitting} and
+        later, after choosing a window width like in the
+        \textit{fixed-width} approach, padding or cropping to the desired width.
+        This approach makes sure that a single R-peak is contained in the
+        window, additionally assuring a uniform width among all the splittings:
+        to this extent, the informative content of the window is reduced by the
+        least possible manner. 
+    \end{itemize}
 
+    \addfigure
+        {img/histograms.jpg}
+        {\textit{Left}: Distribution of the RR-interval in samples.
+        \textit{Right}: Distribution of the distances between abnormal
+        heartbeats. For example, most abnormal heartbeats (over 4500) are
+        located 2 beats after the previous abnormal heartbeat }
+        {fig:hists}
+
+    \fig{fig:windowing} shows the effect of the above strategies. The
+    \textit{adjusted RRR-based} is the employed windowing method, with the
+    fixed with set at $w = 150$ samples, a value chosen based on the
+    median of the RR-interval distribution reported in \fig{fig:hists}.
 
 \subsection{Class imbalance}
+    As the following table highlights, the 244334 windows extracted 
+    (one for each available R-peak/heartbeat) are
+    considerably unbalanced among the three labels of interest
+    \begin{center}
+        \begin{tabular}{||c |c c c||}
+            \hline
+            & Normal & Sopraventricular & Ventricular \\
+            \hline \hline
+            Count & 226930 & 9609 & 7795 \\
+            \hline
+            Fraction & 92.87\% & 3.93\% & 3.19\% \\
+            \hline
+        \end{tabular}
+    \end{center}
 
-\section{The H.T.F. Model}
-1. Parlare del class imbalance? Undersampling? 2. Mettere il graphviz
-del modello? 
+    
+    \begin{figure*}
+        \centering
+        \includegraphics{img/model.png}
+        \caption{Schematic of the History-Time-Frequency model ensamble,
+        respectively color-coded in magenta, yellow and green}
+        \label{fig:model}
+    \end{figure*}
+
+    If such an unbalanced dataset would be used to train the model, learning
+    would happen only for the overrepresented class, hence the heavily
+    underrepresented pathological heartbeats would not be confidently
+    classified: such model would have a very high specificity and a very low
+    sensitivity. In order to cope with this kind of issue,
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The HTF Model}
+    The proposed model is a \textit{History-Time-Frequency} ensemble (HTF), as
+    the classification is performed in parallel in the Time domain and in the
+    Frequency domain, while also accounting for History in terms of the labels 
+    of the past heartbeats in the ECG recording. 
+
 \subsection{H as History}
-During a first inspection phase, an analysis on the distribution of
-pathological beats has been performed. In fig. 1a, the histogram
-reports the abnormal interpeak distances computed over all the
-recordings, confirming that PACs and PVCs often occurs in repeated
-patterns[3][4]. For these reasons, the involvement of the labels
-assigned to the previous peak could help in predicting more precisely
-the current peak. Considering the interpeak distances distributions,
-in this classifier the two previous labels has been added as further
-inputs of the ensemble model
+    During a first inspection phase, an analysis on the distribution of
+    pathological beats has been performed. In \fig{fig:hists}, the histogram
+    reports the distribution of the abnormal interpeak distance computed over all the
+    recordings, confirming that PACs and PVCs often occur in repeated
+    patterns \cite{premature_v} \cite{frequent_premature}. For these reasons, 
+    the involvement of the labels
+    assigned to the previous peaks could help in predicting more precisely
+    the label of the current peak. Considering the interpeak distances distributions,
+    in this classifier the two previous labels have been added as additional
+    inputs to the model.
 
 \subsection{T as Time}
+    One branch of the classifier consists of a recurrent architecture working on
+    the ECG in time domain. Here, Long Short-Term Memories (LSTMs) in
+    combination with 1D convolutions are employed to extract the most relevant
+    features of the ECG morphology while accounting for their temporal
+    dependencies. The heartbeat history is concatenated to the network prior to
+    the last Dense+Softmax layer, so that the final labelling decision also
+    accounts for the past two heartbeats: the concatenation operation prior to
+    the final classifier layer allows the model to learn how to combine the
+    information about the current peak with the information related to the history.
+
 \subsection{F as Frequency}
-The last branch of this model consists in a frequency-domain
-classifier by a proper Fourier Transformation of the inputs. In order
-to apply the Fourier Transform, the stationarity hypothesis has been
-assumed for each window. This is not an heavy assumption, since the
-inputs length is very short and most part of the window consists in
-the peak recorded. The classifier consist of multiple
-CNN-ReLU-MaxPooling stacks. A low filter size has been chosen to get
-useful features in afew amount of samples at a time. After the
-application of the FFT on the input signal, the output of the CNN
-layer is concatenated with the two history-labels as in the time
-model. Finally, a dense layer with a softmax AF provides the
-probability assigned to the three labels. 
+    The last branch of this model consists in a frequency-domain
+    classifier by a proper Fourier Transformation of the inputs. In order
+    to apply the Fourier Transform, the stationarity hypothesis has been
+    assumed for each window. This is not an heavy assumption, since the
+    inputs length is very short and most part of the window consists in
+    the peak recorded. The classifier consist of multiple
+    CNN-ReLU-MaxPooling stacks. A low filter size has been chosen to get
+    useful features in a few amount of samples at a time. After the
+    application of the FFT on the input signal, the output of the CNN
+    layer is concatenated with the two history-labels as in the time
+    model. Finally, a dense layer with a softmax AF provides the
+    probability assigned to the three labels. The history is accounted, in the
+    frequency branch, in the same way as the time branch.
+
+    The full ensemble model is schematically represented in \fig{fig:model}
+
+\section{Training}
+    The time model and frequency models have been trained separately and then
+    ensembled by summing the class probability vectors. The fitting occurs by
+    minimizing a Binary Crossentropy loss function with the ADAM optimizer.
+    The training phase of
+    the time model is set up for 100 epochs, while the frequency model fits over
+    thrice the epochs as it has been observed converging at a slower rate. Batch size is
+    of 256 heartbeats, learning rate starts from $1\cdot10^{-3}$ and
+    decreases on eventual loss plateaus. Training is monitored on accuracy and
+    on a recall metric calculated per class, as follows:
+    \begin{equation}
+        Recall_k=\frac{True_k}{True_k+\sum_{i=0}^{classes}False_i}
+    \end{equation}
+    This metric allows to evaluate if the class imbalance issue has been
+    correctly resolved, as an imbalanced dataset will reflect on a low recall
+    for the underrepresented classes.
+    Training histories are reported on \fig{app:training}.
 
 \section{Results}
+    Results have been evaluated in terms of the model precision, recall and
+    f1-score on the 3 classes separately.
+    
+    \begin{center}
+        \begin{tabular}{||c|c c c c||}
+            \hline
+            Label & Precision & Recall & f1-score & Support\\
+            \hline \hline
+        
+            Normal& 0.97&0.95&0.96&699\\
+            \hline
+            Sopraventricular& 0.94&0.97&0.96&865\\
+            \hline
+            Ventricular& 0.97&0.97&0.97&702\\
+            \hline\hline
+        
+            Per-Class Accuracy &0.96&0.96&0.96&2266\\
+            \hline
+            Weighted Accuracy &0.96&0.96&0.96&2266\\
+            \hline
+            Overall Accuracy&&&&\textbf{0.96}\\
+            \hline
+        \end{tabular}
+    \end{center}
 
+    The same results are graphically represented in the form of a confusion
+    matrix in \fig{fig:confmat}, this time differentiating the results of the
+    time model, the frequency model and the ensemble.
+
+    \begin{figure*}
+        \centering
+        \includegraphics[width=\linewidth]{img/confmatr.png}
+        \caption{}
+        \label{fig:confmat}
+    \end{figure*}
+    
 \section{Discussion}
 
 \section{Conclusions}
+
+% BIBLIOGRAPHY
+\bibliography{biblio.bib}
+\bibliographystyle{plain}
+
+% APPENDIX
+\appendices
+\section{Training Process}
+\begin{figure*}
+    \centering
+    \includegraphics[width=\linewidth]{img/training.png}
+    \caption{}
+    \label{app:training}
+\end{figure*}
 
 \end{document}

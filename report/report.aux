@@ -16,19 +16,43 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{relation_of}
+\citation{cardiac_mortality}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Context}{1}{section.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {II}Introduction}{1}{section.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Dataset}{1}{subsection.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Annotated ECGs from a sample patient}}{1}{figure.1}\protected@file@percent }
+\newlabel{fig:examples}{{1}{1}{Annotated ECGs from a sample patient}{figure.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}Data Preprocessing}{1}{section.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Exploratory Data Analysis}{1}{subsection.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Signal Windowing}{1}{subsection.3.2}\protected@file@percent }
-\newlabel{fig:windows}{{\mbox  {III-B}}{1}{Signal Windowing}{subsection.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Class imbalance}{1}{subsection.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {IV}The H.T.F. Model}{1}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}H as History}{1}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}T as Time}{2}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}F as Frequency}{2}{subsection.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {V}Results}{2}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Discussion}{2}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{2}{section.7}\protected@file@percent }
-\gdef \@abspage@last{2}
+\citation{premature_v}
+\citation{frequent_premature}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comparison of window splitting strategies. The \textit  {RRR-based} (left) clearly shows inconsistency in the width; the \textit  {fixed-width} (right) displays how adjacent peaks are included in the window; the \textit  {adjusted RRR-based} (center) shows, in cases like the uppermost window, the padding used to match the dimensions}}{2}{figure.2}\protected@file@percent }
+\newlabel{fig:windowing}{{2}{2}{Comparison of window splitting strategies. The \textit {RRR-based} (left) clearly shows inconsistency in the width; the \textit {fixed-width} (right) displays how adjacent peaks are included in the window; the \textit {adjusted RRR-based} (center) shows, in cases like the uppermost window, the padding used to match the dimensions}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Signal Windowing}{2}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textit  {Left}: Distribution of the RR-interval in samples. \textit  {Right}: Distribution of the distances between abnormal heartbeats. For example, most abnormal heartbeats (over 4500) are located 2 beats after the previous abnormal heartbeat }}{2}{figure.3}\protected@file@percent }
+\newlabel{fig:hists}{{3}{2}{\textit {Left}: Distribution of the RR-interval in samples. \textit {Right}: Distribution of the distances between abnormal heartbeats. For example, most abnormal heartbeats (over 4500) are located 2 beats after the previous abnormal heartbeat}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Class imbalance}{2}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}The HTF Model}{2}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}H as History}{2}{subsection.4.1}\protected@file@percent }
+\bibdata{biblio.bib}
+\bibcite{frequent_premature}{1}
+\bibcite{cardiac_mortality}{2}
+\bibcite{relation_of}{3}
+\bibcite{premature_v}{4}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Schematic of the History-Time-Frequency model ensamble, respectively color-coded in magenta, yellow and green}}{3}{figure.4}\protected@file@percent }
+\newlabel{fig:model}{{4}{3}{Schematic of the History-Time-Frequency model ensamble, respectively color-coded in magenta, yellow and green}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}T as Time}{3}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}F as Frequency}{3}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {V}Training}{3}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Results}{3}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Discussion}{3}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Conclusions}{3}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{3}{section*.1}\protected@file@percent }
+\bibstyle{plain}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces }}{4}{figure.5}\protected@file@percent }
+\newlabel{fig:confmat}{{5}{4}{}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{Appendix\nobreakspace  A: Training Process}{4}{section*.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces }}{5}{figure.6}\protected@file@percent }
+\newlabel{app:training}{{6}{5}{}{figure.6}{}}
+\gdef \@abspage@last{5}
