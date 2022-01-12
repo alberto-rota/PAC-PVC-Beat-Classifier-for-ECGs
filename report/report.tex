@@ -44,8 +44,8 @@
 \maketitle
 
 \section{Context}
-    The goal of this project is to build a classification model that
-    properly annotates each peaks as Normal, PAC (supraventricular
+    The goal of this work is to build a classification model that
+    properly annotates ECG heartbeats as Normal, PAC (supraventricular
     beats) or PVC (ventricular beats). The available dataset is
     composed of 2-lead ECG signal and R peaks position of 105 patient 
     recordings. 
@@ -54,24 +54,25 @@
     Electrocardiogram (ECG) signals records the electrical activity of
     the human hearts and consist of several waveforms (P, QRS, and T).
     The duration and shape of each waveform and the distances between
-    different peaks are used to diagnose cardiovascular heart diseases
-    (CVD). Premature atrial contractions (PAC) and premature
-    ventricular contractions (PVC) are among the most common forms of
+    different peaks are used to diagnose Cardiovascular Heart Diseases
+    (CVDs). Premature Atrial Contractions (PACs) and Premature
+    Ventricular Contractions (PVCs) are among the most common forms of
     arrhythmias; the first results from premature electrical
     activation originating in the atria of the heart, while the second
     one is caused by a premature electrical activation originating in
-    the ventricles. As the presence of frequent PACs and PVCs are
+    the ventricles. As the presence of frequent PACs and PVCs is
     associated with a higher risk of unfavorable prognosis \cite{relation_of}
     \cite{cardiac_mortality}, the accurate recognition of these abnormal beats 
-    is strictly required.
+    is rigorously required.
     The aim of this work is to design a deep-learning ensemble
-    model that properly classifies all the peaks in a recording,
-    without requiring the extraction of ECG features. The
-    History-Time-Frequency Classifier analyzes each samples in both
-    the time and frequency domain, and take as input also the labels
-    assigned to the previous two samples. The miss-classification
-    error on the test set was around 3\%, highlighting the potential
-    of our classifier. 
+    model that properly classifies all the R-peaks in an ECG recording,
+    without requiring the manual extraction of ECG features. The
+    \textit{History-Time-Frequency} classifier analyzes each heartbeat in both
+    the time and frequency domains, and take as input also the labels
+    assigned to the previous two beats. 
+    % The miss-classification
+    % error on the test set was around 3\%, highlighting the potential
+    % of our classifier. 
 
     \addfigure
         {img/example.jpg}
@@ -91,12 +92,20 @@
 
 \subsection{Exploratory Data Analysis}
     First and foremost, the acquisition frequencies are made uniform in the
-    whole dataset by undersampling the recording acquired at $250Hz$. This
-    procedure is preferred to the oversampling of low-resolution acquisition as
-    it may introduce biases due to the interpolation method. Moreover, the ECG
-    features are preserved after the undersampling, further justifying this
-    choice. No missing data is found in the recordings, hence there is no need
+    whole dataset by undersampling the recording acquired at $250Hz$: this is
+    done in order to guarantee that the model inputs have the same size
+    independently of the sampling frequency.  
+    % This
+    % procedure is preferred to the oversampling of low-resolution acquisition as
+    % it may introduce biases due to the interpolation method. 
+    % Moreover, the ECG
+    % features are preserved after the undersampling, further justifying this
+    % choice. 
+
+    No missing data is found in the recordings, hence there is no need
     to handle this kind of issue.
+    
+
     An in-depth inspection of the dataset revealed, still, mismatches in the
     annotations of the R-peak positions, as for patient \textit{S005} and
     \textit{S009} the last heartbeat in the recording is labelled with a
@@ -111,7 +120,9 @@
         adjacent peaks are included in the window; the \textit{adjusted RRR-based}
         (center) shows, in cases like the uppermost window, the padding used to match
         the dimensions}
-        {fig:windowing}.
+        {fig:windowing}
+
+    
 
 \subsection{Signal Windowing}
     The heartbeat-by-heartbeat classification that the model performs implies the
@@ -141,9 +152,9 @@
         later, after choosing a window width like in the
         \textit{fixed-width} approach, padding or cropping to the desired width.
         This approach makes sure that a single R-peak is contained in the
-        window, additionally assuring a uniform width among all the splittings:
+        window, and it assures a uniform width among all the splittings:
         to this extent, the informative content of the window is reduced by the
-        least possible manner. 
+        least possible amount. 
     \end{itemize}
 
     \addfigure
@@ -156,8 +167,8 @@
 
     \fig{fig:windowing} shows the effect of the above strategies. The
     \textit{adjusted RRR-based} is the employed windowing method, with the
-    fixed with set at $w = 150$ samples, a value chosen based on the
-    median of the RR-interval distribution reported in \fig{fig:hists}.
+    fixed width set at $w = 150$ samples, a value chosen based a qualitative
+    analysis of the RR-interval distribution reported in \fig{fig:hists}.
 
 \subsection{Class imbalance}
     As the following table highlights, the 244334 windows extracted 
@@ -179,19 +190,21 @@
     \begin{figure*}
         \centering
         \includegraphics{img/model.png}
-        \caption{Schematic of the History-Time-Frequency model ensamble,
+        \caption{Schematic of the History-Time-Frequency model ensemble,
         respectively color-coded in magenta, yellow and green}
         \label{fig:model}
     \end{figure*}
 
     If such an unbalanced dataset would be used to train the model, learning
-    would happen only for the overrepresented class, hence the heavily
+    would happen only for the overrepresented class. As a consequence, the 
     underrepresented pathological heartbeats would not be confidently
     classified: such model would have a very high specificity and a very low
-    sensitivity. In order to cope with this kind of issue,
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    sensitivity. In order to cope with this kind of issue, an undersampling of
+    the most frequent class has been performed to balance the class
+    distribution. To do so, $\frac{7795}{105}$ Normal heartbeats have been
+    randomly extracted from the ECG of each patient, obtaining a total of 7795
+    Normal peaks,
+    a number equal to the least represented among the classes.
 
 \section{The HTF Model}
     The proposed model is a \textit{History-Time-Frequency} ensemble (HTF), as
@@ -207,7 +220,7 @@
     patterns \cite{premature_v} \cite{frequent_premature}. For these reasons, 
     the involvement of the labels
     assigned to the previous peaks could help in predicting more precisely
-    the label of the current peak. Considering the interpeak distances distributions,
+    the label of the current peak. Considering the interpeak distance distributions,
     in this classifier the two previous labels have been added as additional
     inputs to the model.
 
@@ -218,31 +231,32 @@
     features of the ECG morphology while accounting for their temporal
     dependencies. The heartbeat history is concatenated to the network prior to
     the last Dense+Softmax layer, so that the final labelling decision also
-    accounts for the past two heartbeats: the concatenation operation prior to
+    accounts for the past two labels: the concatenation operation prior to
     the final classifier layer allows the model to learn how to combine the
     information about the current peak with the information related to the history.
 
 \subsection{F as Frequency}
     The last branch of this model consists in a frequency-domain
-    classifier by a proper Fourier Transformation of the inputs. In order
-    to apply the Fourier Transform, the stationarity hypothesis has been
-    assumed for each window. This is not an heavy assumption, since the
-    inputs length is very short and most part of the window consists in
-    the peak recorded. The classifier consist of multiple
-    CNN-ReLU-MaxPooling stacks. A low filter size has been chosen to get
-    useful features in a few amount of samples at a time. After the
+    classifier on a Fourier Transform of the inputs. In order
+    to apply the Fourier Transform, the \textit{quasi}-stationarity hypothesis has been
+    assumed for each window.
+    %  This is not an heavy assumption, since the
+    % inputs length is very short and most part of the window consists in
+    % the peak recorded. 
+    The classifier consist of multiple
+    CNN-ReLU-MaxPooling stacks. A small convolutional kernel has been chosen to
+    extract features at a reduced scale. After the
     application of the FFT on the input signal, the output of the CNN
-    layer is concatenated with the two history-labels as in the time
-    model. Finally, a dense layer with a softmax AF provides the
-    probability assigned to the three labels. The history is accounted, in the
-    frequency branch, in the same way as the time branch.
+    layer is concatenated with the two history labels like in the time
+    model. Finally, a dense layer with a softmax activation function provides the
+    probability assigned to the three classes.  
 
-    The full ensemble model is schematically represented in \fig{fig:model}
+    The full ensemble model is schematically represented in \fig{fig:model}.
 
 \section{Training}
-    The time model and frequency models have been trained separately and then
-    ensembled by summing the class probability vectors. The fitting occurs by
-    minimizing a Binary Crossentropy loss function with the ADAM optimizer.
+    The time and frequency models have been trained separately and then
+    ensembled by summing the class probability vectors. The training is performed by
+    minimizing a Categorical Crossentropy loss function with the ADAM optimizer.
     The training phase of
     the time model is set up for 100 epochs, while the frequency model fits over
     thrice the epochs as it has been observed converging at a slower rate. Batch size is
@@ -259,7 +273,8 @@
 
 \section{Results}
     Results have been evaluated in terms of the model precision, recall and
-    f1-score on the 3 classes separately.
+    f1-score on the 3 classes separately. The test set used for such evaluation
+    consists of 10\% of the available dataset.
     
     \begin{center}
         \begin{tabular}{||c|c c c c||}
@@ -293,7 +308,7 @@
         \caption{}
         \label{fig:confmat}
     \end{figure*}
-    
+
 \section{Discussion}
 
 \section{Conclusions}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.11)  12 JAN 2022 17:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.11)  12 JAN 2022 20:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -421,13 +421,13 @@ LaTeX Info: Redefining \nameref on input line 25.
 <img/example.jpg, id=80, 295.22295pt x 298.83646pt>
 File: img/example.jpg Graphic file (type jpg)
 <use img/example.jpg>
-Package pdftex.def Info: img/example.jpg  used on input line 79.
+Package pdftex.def Info: img/example.jpg  used on input line 80.
 (pdftex.def)             Requested size: 252.0pt x 255.08376pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
  (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
  (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -436,50 +436,50 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.106 
+l.115 
        <./img/example.jpg>]
 <img/windowing.jpg, id=95, 433.62pt x 216.81pt>
 File: img/windowing.jpg Graphic file (type jpg)
 <use img/windowing.jpg>
-Package pdftex.def Info: img/windowing.jpg  used on input line 114.
+Package pdftex.def Info: img/windowing.jpg  used on input line 123.
 (pdftex.def)             Requested size: 252.0pt x 126.00131pt.
 <img/histograms.jpg, id=96, 433.62pt x 216.81pt>
 File: img/histograms.jpg Graphic file (type jpg)
 <use img/histograms.jpg>
-Package pdftex.def Info: img/histograms.jpg  used on input line 155.
+Package pdftex.def Info: img/histograms.jpg  used on input line 166.
 (pdftex.def)             Requested size: 252.0pt x 126.00131pt.
 <img/model.png, id=99, 470.4777pt x 108.405pt>
 File: img/model.png Graphic file (type png)
 <use img/model.png>
-Package pdftex.def Info: img/model.png  used on input line 181.
+Package pdftex.def Info: img/model.png  used on input line 192.
 (pdftex.def)             Requested size: 470.47655pt x 108.40472pt.
  [2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.213 
+l.226 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.213 
+l.226 
        <./img/windowing.jpg> <./img/histograms.jpg>]
-Overfull \hbox (20.98769pt too wide) in paragraph at lines 265--284
+Overfull \hbox (20.98769pt too wide) in paragraph at lines 280--299
  [] 
  []
 
-<img/confmatr.png, id=118, 880.9713pt x 255.8358pt>
+<img/confmatr.png, id=117, 880.9713pt x 255.8358pt>
 File: img/confmatr.png Graphic file (type png)
 <use img/confmatr.png>
-Package pdftex.def Info: img/confmatr.png  used on input line 292.
+Package pdftex.def Info: img/confmatr.png  used on input line 307.
 (pdftex.def)             Requested size: 516.0pt x 149.85266pt.
 (./report.bbl [3pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.29 \end{thebibliography}
-                           <./img/model.png>])
+l.28 
+      <./img/model.png>])
 <img/training.png, id=130, 877.3578pt x 603.4545pt>
 File: img/training.png Graphic file (type png)
 <use img/training.png>
-Package pdftex.def Info: img/training.png  used on input line 310.
+Package pdftex.def Info: img/training.png  used on input line 325.
 (pdftex.def)             Requested size: 516.0pt x 354.9209pt.
 
 
@@ -496,13 +496,13 @@ Before submitting the final camera ready copy, remember to:
 [4pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.315 \end{document}
+l.330 \end{document}
                     
 
  <./img/confmatr.png>] [5pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.315 \end{document}
+l.330 \end{document}
                      <./img/training.png>] (./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: F7180F9799435BCDE4A408C4D6735BC4;1997.
@@ -514,9 +514,9 @@ Here is how much of TeX's memory you used:
  28843 multiletter control sequences out of 15000+600000
  434536 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,8n,81p,607b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,8n,81p,607b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (5 pages, 671513 bytes).
+Output written on report.pdf (5 pages, 672333 bytes).
 PDF statistics:
  196 PDF objects out of 1000 (max. 8388607)
  154 compressed objects within 2 object streams
