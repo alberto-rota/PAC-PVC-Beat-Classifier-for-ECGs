@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex report"] 1642014045 "report.aux" "report.bbl" "report" 1642014049
+["bibtex report"] 1642014288 "report.aux" "report.bbl" "report" 1642021587
   "biblio.bib" 1641977795 5286 eb908bcf014bd55030a4164c4383fb0a ""
   "c:/texlive/2021/texmf-dist/bibtex/bst/base/plain.bst" 1633948499 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "report.aux" 1642014048 5332 84f9a08689d01a1482af3c178d303bbc "pdflatex"
+  "report.aux" 1642021586 5332 0ba7167ea16bde0e18ff3bed114cf252 "pdflatex"
   (generated)
-  "report.bbl"
   "report.blg"
-["pdflatex"] 1642014046 "c:/Users/alber/Desktop/Files/Università/V ANNO ACCADEMICO/AI in Biomedicine/Workshop/PAC-PVC-Beat-Classifier-for-ECGs/report/report.tex" "report.pdf" "report" 1642014049
-  "c:/Users/alber/Desktop/Files/Università/V ANNO ACCADEMICO/AI in Biomedicine/Workshop/PAC-PVC-Beat-Classifier-for-ECGs/report/report.tex" 1642014041 14939 53f10d9a8be1b0342205070cec7a5b53 ""
+  "report.bbl"
+["pdflatex"] 1642021584 "c:/Users/alber/Desktop/Files/Università/V ANNO ACCADEMICO/AI in Biomedicine/Workshop/PAC-PVC-Beat-Classifier-for-ECGs/report/report.tex" "report.pdf" "report" 1642021587
+  "c:/Users/alber/Desktop/Files/Università/V ANNO ACCADEMICO/AI in Biomedicine/Workshop/PAC-PVC-Beat-Classifier-for-ECGs/report/report.tex" 1642021583 14930 cfb4708ba00cfb27539ec271464bfb42 ""
   "c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc" 1633949490 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1633949872 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1633952866 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -107,17 +107,17 @@
   "c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1633953650 4399729 ba2bdf7099c8a2ba97051a2b802eaeb0 ""
   "c:/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1633953796 2797777 7ff7d89382a28863b7bf7ccde1f276ca ""
   "c:/texlive/2021/texmf.cnf" 1633953630 713 e69b156964470283e0530f5060668171 ""
-  "img/confmatr.png" 1642000313 38466 1ed9395047cc69876c8c169ea64d7d43 ""
+  "img/confmatr.png" 1642021474 33622 249bdf226f68b2a83d4d1b9e64c7b4dc ""
   "img/example.jpg" 1641979529 132958 20ae2dbccbe82ab129f505c4b64d3f60 ""
   "img/histograms.jpg" 1642001469 94028 e1d98c1d0bd0dd4e45449032c3aee9aa ""
   "img/model.png" 1642003071 44227 d512c6684f50d842e5648dae28eeb0e7 ""
   "img/training.png" 1642000458 161932 ca16f57e59bbe147757b0b558573dbbb ""
   "img/windowing.jpg" 1642001360 132045 fc22ccfe31f1978269851b7000764692 ""
-  "report.aux" 1642014048 5332 84f9a08689d01a1482af3c178d303bbc "pdflatex"
-  "report.bbl" 1642014046 1119 261181f72af28bfa338e57600dc45db5 "bibtex report"
-  "report.out" 1642014048 1997 f7180f9799435bcde4a408c4d6735bc4 "pdflatex"
+  "report.aux" 1642021586 5332 0ba7167ea16bde0e18ff3bed114cf252 "pdflatex"
+  "report.bbl" 1642014288 1119 261181f72af28bfa338e57600dc45db5 "bibtex report"
+  "report.out" 1642021586 1997 f7180f9799435bcde4a408c4d6735bc4 "pdflatex"
   (generated)
-  "report.out"
-  "report.pdf"
   "report.log"
+  "report.out"
   "report.aux"
+  "report.pdf"
