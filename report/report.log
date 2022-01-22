@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.11)  12 JAN 2022 22:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.11)  22 JAN 2022 17:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -362,24 +362,24 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ) (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 -- Lines per column: 56 (exact).
 (c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -401,7 +401,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 25.
+Package hyperref Info: Link coloring OFF on input line 24.
  (c:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (c:/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -411,9 +411,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count301
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 24.
+LaTeX Info: Redefining \pageref on input line 24.
+LaTeX Info: Redefining \nameref on input line 24.
  (./report.out) (./report.out)
 \@outlinefile=\write3
 \openout3 = `report.out'.
@@ -421,13 +421,13 @@ LaTeX Info: Redefining \nameref on input line 25.
 <img/example.jpg, id=80, 295.22295pt x 298.83646pt>
 File: img/example.jpg Graphic file (type jpg)
 <use img/example.jpg>
-Package pdftex.def Info: img/example.jpg  used on input line 80.
+Package pdftex.def Info: img/example.jpg  used on input line 74.
 (pdftex.def)             Requested size: 252.0pt x 255.08376pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 79.
  (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 79.
  (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -436,50 +436,50 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.115 
+l.110 
        <./img/example.jpg>]
 <img/windowing.jpg, id=95, 433.62pt x 216.81pt>
 File: img/windowing.jpg Graphic file (type jpg)
 <use img/windowing.jpg>
-Package pdftex.def Info: img/windowing.jpg  used on input line 123.
+Package pdftex.def Info: img/windowing.jpg  used on input line 118.
 (pdftex.def)             Requested size: 252.0pt x 126.00131pt.
 <img/histograms.jpg, id=96, 433.62pt x 216.81pt>
 File: img/histograms.jpg Graphic file (type jpg)
 <use img/histograms.jpg>
-Package pdftex.def Info: img/histograms.jpg  used on input line 166.
+Package pdftex.def Info: img/histograms.jpg  used on input line 162.
 (pdftex.def)             Requested size: 252.0pt x 126.00131pt.
 <img/model.png, id=99, 470.4777pt x 108.405pt>
 File: img/model.png Graphic file (type png)
 <use img/model.png>
-Package pdftex.def Info: img/model.png  used on input line 192.
+Package pdftex.def Info: img/model.png  used on input line 193.
 (pdftex.def)             Requested size: 470.47655pt x 108.40472pt.
  [2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.226 
+l.229 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.226 
+l.229 
        <./img/windowing.jpg> <./img/histograms.jpg>]
-Overfull \hbox (20.98769pt too wide) in paragraph at lines 280--299
+Overfull \hbox (20.98769pt too wide) in paragraph at lines 287--306
  [] 
  []
 
 <img/confmatr.png, id=117, 611.4042pt x 172.0026pt>
 File: img/confmatr.png Graphic file (type png)
 <use img/confmatr.png>
-Package pdftex.def Info: img/confmatr.png  used on input line 307.
+Package pdftex.def Info: img/confmatr.png  used on input line 315.
 (pdftex.def)             Requested size: 516.0pt x 145.16881pt.
 (./report.bbl [3pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.28 
-      <./img/model.png>])
+l.9 
+     <./img/model.png>])
 <img/training.png, id=130, 877.3578pt x 603.4545pt>
 File: img/training.png Graphic file (type png)
 <use img/training.png>
-Package pdftex.def Info: img/training.png  used on input line 325.
+Package pdftex.def Info: img/training.png  used on input line 341.
 (pdftex.def)             Requested size: 516.0pt x 354.9209pt.
 
 
@@ -496,27 +496,27 @@ Before submitting the final camera ready copy, remember to:
 [4pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.330 \end{document}
+l.346 \end{document}
                     
 
  <./img/confmatr.png>] [5pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.330 \end{document}
+l.346 \end{document}
                      <./img/training.png>] (./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: F7180F9799435BCDE4A408C4D6735BC4;1997.
+(rerunfilecheck)             Checksum: 8B5F57EF8D70F4C287FEDC151285F229;1904.
  ) 
 Here is how much of TeX's memory you used:
  11164 strings out of 478599
  168333 string characters out of 5858100
- 579513 words of memory out of 5000000
+ 578513 words of memory out of 5000000
  28843 multiletter control sequences out of 15000+600000
  434536 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,8n,81p,607b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,8n,81p,607b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (5 pages, 666581 bytes).
+Output written on report.pdf (5 pages, 667803 bytes).
 PDF statistics:
  196 PDF objects out of 1000 (max. 8388607)
  154 compressed objects within 2 object streams
