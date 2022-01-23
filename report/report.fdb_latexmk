@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex report"] 1642868486 "report.aux" "report.bbl" "report" 1642869242
-  "biblio.bib" 1641977795 5286 eb908bcf014bd55030a4164c4383fb0a ""
+["bibtex report"] 1642930933 "report.aux" "report.bbl" "report" 1642930970
+  "biblio.bib" 1642930833 5280 7fe6c86b7bdd38f30917cb731be46aaa ""
   "c:/texlive/2021/texmf-dist/bibtex/bst/base/plain.bst" 1633948499 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "report.aux" 1642869241 5317 ce66abb1ec0e218f60cf6c7b7223c329 "pdflatex"
+  "report.aux" 1642930935 5363 cb850de9836d2d1a44b25079ee4bece4 "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
-["pdflatex"] 1642869239 "c:/Users/alber/Desktop/Files/Università/V ANNO ACCADEMICO/AI in Biomedicine/Workshop/PAC-PVC-Beat-Classifier-for-ECGs/report/report.tex" "report.pdf" "report" 1642869242
-  "c:/Users/alber/Desktop/Files/Università/V ANNO ACCADEMICO/AI in Biomedicine/Workshop/PAC-PVC-Beat-Classifier-for-ECGs/report/report.tex" 1642869238 15643 827fdd9116e2cfa8c39028daf930a502 ""
+["pdflatex"] 1642930933 "c:/Users/alber/Desktop/Files/Università/V ANNO ACCADEMICO/AI in Biomedicine/Workshop/PAC-PVC-Beat-Classifier-for-ECGs/report/report.tex" "report.pdf" "report" 1642930970
+  "c:/Users/alber/Desktop/Files/Università/V ANNO ACCADEMICO/AI in Biomedicine/Workshop/PAC-PVC-Beat-Classifier-for-ECGs/report/report.tex" 1642930969 17741 675cb632e1797680f7bd084e6a7dc109 ""
   "c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc" 1633949490 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1633949872 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1633952866 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -113,11 +113,11 @@
   "img/model.png" 1642003071 44227 d512c6684f50d842e5648dae28eeb0e7 ""
   "img/training.png" 1642000458 161932 ca16f57e59bbe147757b0b558573dbbb ""
   "img/windowing.jpg" 1642001360 132045 fc22ccfe31f1978269851b7000764692 ""
-  "report.aux" 1642869241 5317 ce66abb1ec0e218f60cf6c7b7223c329 "pdflatex"
-  "report.bbl" 1642868487 1119 261181f72af28bfa338e57600dc45db5 "bibtex report"
-  "report.out" 1642869241 1904 8b5f57ef8d70f4c287fedc151285f229 "pdflatex"
+  "report.aux" 1642930935 5363 cb850de9836d2d1a44b25079ee4bece4 "pdflatex"
+  "report.bbl" 1642930933 1119 261181f72af28bfa338e57600dc45db5 "bibtex report"
+  "report.out" 1642930935 1904 8b5f57ef8d70f4c287fedc151285f229 "pdflatex"
   (generated)
-  "report.aux"
-  "report.pdf"
   "report.out"
+  "report.pdf"
+  "report.aux"
   "report.log"

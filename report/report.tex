@@ -221,7 +221,7 @@
     histogram reports the distribution of the abnormal interpeak
     distance computed over all the recordings, confirming that PACs
     and PVCs often occur in repeated patterns \cite{premature_v}
-    \cite{frequent_premature}. For these reasons, the involvement of
+    \cite{frequent_premature} \cite{relation_of}. For these reasons, the involvement of
     the labels assigned to the previous peaks could help in predicting
     more precisely the label of the current peak. Considering the
     interpeak distance distributions, in this classifier the two
@@ -319,28 +319,59 @@
 
 \section{Discussion}
     Results from the test set show that the HTF model performs equally good on
-    the three classes: this is due to the balancing phase performed before the
-    training one. Moreover, the undersampling strategy used in the balancing
+    the three classes: this is due to the balancing phase performed before
+    training. Moreover, the undersampling strategy used in the balancing
     stage led to a reduced training time with no evidence of overfitting.
 
-    % Windowing inventiiamo
-    % Ensamble
-    % History inventiamo
+    The window splitting method represents a fundamental part of the entire
+    work; the \textbf{Adjusted RRR-based} has been chosen to train the HTF model for mainly two reasons.
+    First, it assures the window to have a fixed length, with a single peak in
+    the middle; this improves the performance of the model because it intrinsically learns that the 
+    most important features are located in the middle of the array/input.
+    The padding that has been performed was necessary since it is necessary to
+    avoid the presence of multiple peaks in a single window, which is generally
+    caused by arrythmias or tachicardic conditions. Among  all the 
+    splitting method tested, this one got the best results and so it has been 
+    chosen for the deployment of the final model. 
+
+    As PACs and PVCs often occurs in a repetitive fashion \cite{premature_v}, a number of past
+    labels has been included as model inputs to consider also the history 
+    of the signal. Even if a great number of
+    past classifications could lead to better overall performances, no
+    significant improvement has been observed both on time and frequency 
+    models when including more than two labels.
+    % so this latter
+    % has been chosen for the final development.
+    
+    Both the time and frequency model got high performances on all the three 
+    classes. Moreover, they performed better on different classes: the time 
+    model classifies well the <normal and PVC>s, 
+    while the frequency one the PACs class. These results led to development 
+    of an ensemble model which combine the output probabilities of the two, 
+    in order to strenghten the classifier accuracy. 
 
 \section{Conclusions}
-    % bella zio
+    In this work a History-Time-Frequency model has been developed in order 
+    to classify the heart peaks in ECG signal of a patient as normal,
+    Sopraventricular or Ventricular. 
+    The model performance has been assessed by the means of different metrics, 
+    such as accuracy, sensitivity and specificity; results on the test set 
+    highlight the <strength> of this ensemble classifier, which got a 97\%
+    accuracy on average.
+
 % BIBLIOGRAPHY
 \bibliography{biblio.bib}
 \bibliographystyle{plain}
-
+\newpage
 % APPENDIX
 \appendices
-\section{Training Process}
 \begin{figure*}
     \centering
     \includegraphics[width=\linewidth]{img/training.png}
     \caption{}
     \label{app:training}
 \end{figure*}
+\section{Training Process}
+
 
 \end{document}
