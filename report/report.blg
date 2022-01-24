@@ -1,46 +1,57 @@
 This is BibTeX, Version 0.99d (TeX Live 2021/W32TeX)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: report.aux
-The style file: plain.bst
-Database file #1: biblio.bib
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: IEEEabrv.bib
+Database file #2: biblio.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
 You've used 4 entries,
-            2118 wiz_defined-function locations,
-            526 strings with 4913 characters,
-and the built_in function-call counts, 1704 in all, are:
-= -- 148
-> -- 131
-< -- 0
-+ -- 52
-- -- 48
-* -- 156
-:= -- 310
-add.period$ -- 12
+            4087 wiz_defined-function locations,
+            1375 strings with 18690 characters,
+and the built_in function-call counts, 3670 in all, are:
+= -- 287
+> -- 118
+< -- 28
++ -- 64
+- -- 24
+* -- 206
+:= -- 577
+add.period$ -- 8
 call.type$ -- 4
-change.case$ -- 36
-chr.to.int$ -- 0
+change.case$ -- 4
+chr.to.int$ -- 57
 cite$ -- 4
-duplicate$ -- 43
-empty$ -- 97
-format.name$ -- 48
-if$ -- 327
+duplicate$ -- 247
+empty$ -- 249
+format.name$ -- 27
+if$ -- 827
 int.to.chr$ -- 0
 int.to.str$ -- 4
-missing$ -- 4
-newline$ -- 23
-num.names$ -- 8
-pop$ -- 30
+missing$ -- 49
+newline$ -- 41
+num.names$ -- 4
+pop$ -- 105
 preamble$ -- 1
-purify$ -- 32
-quote$ -- 0
-skip$ -- 28
+purify$ -- 0
+quote$ -- 2
+skip$ -- 270
 stack$ -- 0
-substring$ -- 77
-swap$ -- 4
-text.length$ -- 0
+substring$ -- 137
+swap$ -- 218
+text.length$ -- 9
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 16
+top$ -- 5
+type$ -- 4
 warning$ -- 0
-while$ -- 11
+while$ -- 13
 width$ -- 5
-write$ -- 45
+write$ -- 72

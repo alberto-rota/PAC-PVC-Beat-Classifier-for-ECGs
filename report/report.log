@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.11)  23 JAN 2022 10:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.11)  23 JAN 2022 11:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -466,11 +466,11 @@ Overfull \hbox (20.98769pt too wide) in paragraph at lines 287--306
  [] 
  []
 
-<img/confmatr.png, id=118, 611.4042pt x 172.0026pt>
+<img/confmatr.png, id=118, 757.02824pt x 224.63925pt>
 File: img/confmatr.png Graphic file (type png)
 <use img/confmatr.png>
 Package pdftex.def Info: img/confmatr.png  used on input line 315.
-(pdftex.def)             Requested size: 516.0pt x 145.16881pt.
+(pdftex.def)             Requested size: 516.0pt x 153.11942pt.
 [3pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -478,12 +478,12 @@ l.336
        <./img/model.png>] (./report.bbl) [4pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.365 \newpage
+l.366 \newpage
                <./img/confmatr.png>]
-<img/training.png, id=137, 877.3578pt x 603.4545pt>
+<img/training.png, id=141, 877.3578pt x 603.4545pt>
 File: img/training.png Graphic file (type png)
 <use img/training.png>
-Package pdftex.def Info: img/training.png  used on input line 370.
+Package pdftex.def Info: img/training.png  used on input line 373.
 (pdftex.def)             Requested size: 516.0pt x 354.9209pt.
 
 
@@ -499,27 +499,27 @@ Before submitting the final camera ready copy, remember to:
 
 [5
 
-] [6pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.377 \end{document}
+l.382 \end{document}
                      <./img/training.png>] (./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 8B5F57EF8D70F4C287FEDC151285F229;1904.
  ) 
 Here is how much of TeX's memory you used:
- 11165 strings out of 478599
- 168339 string characters out of 5858100
- 578513 words of memory out of 5000000
- 28843 multiletter control sequences out of 15000+600000
- 434536 words of font info for 83 fonts, out of 8000000 for 9000
+ 11189 strings out of 478599
+ 168639 string characters out of 5858100
+ 578761 words of memory out of 5000000
+ 28861 multiletter control sequences out of 15000+600000
+ 437636 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,8n,81p,607b,338s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,8n,81p,607b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (6 pages, 670071 bytes).
+Output written on report.pdf (5 pages, 754112 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
+ 202 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
  167 words of extra memory for PDF output out of 10000 (max. 10000000)
 

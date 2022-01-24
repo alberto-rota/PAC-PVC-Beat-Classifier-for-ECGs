@@ -8,7 +8,7 @@
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{lipsum}  
-\usepackage{float}  
+\usepackage{float}   
 
 % COMMANDS
 \newcommand{\R}{\mathbb{R}} \newcommand{\fig}[1]{\textit{Figure
@@ -276,7 +276,7 @@
     This metric allows to evaluate if the class imbalance issue has
     been correctly resolved, as an imbalanced dataset will reflect on
     a low recall for the underrepresented classes. Training histories
-    are reported on \fig{app:training}.
+    are reported on \fig{app:training} in the \textit{Appendix}.
 
 \section{Results}
     Results have been evaluated in terms of the model precision,
@@ -358,20 +358,25 @@
     such as accuracy, sensitivity and specificity; results on the test set 
     highlight the <strength> of this ensemble classifier, which got a 97\%
     accuracy on average.
+    \vfill\null
 
 % BIBLIOGRAPHY
-\bibliography{biblio.bib}
-\bibliographystyle{plain}
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,biblio.bib}
 \newpage
+\onecolumn
 % APPENDIX
 \appendices
-\begin{figure*}
+\section{Training Process}
+\begin{figure*}[h]
     \centering
     \includegraphics[width=\linewidth]{img/training.png}
-    \caption{}
+    \caption{Training process for the time model \textit{(left)} and for the
+    frequency model \textit{right}, showing the Cross-Entropy loss function, the
+    recall for each class and the accuracy. The time model is trained for 100
+    epochs and the frequency model for 300 epochs.}
     \label{app:training}
 \end{figure*}
-\section{Training Process}
 
 
 \end{document}
