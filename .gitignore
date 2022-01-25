@@ -1,4 +1,4 @@
-/.tmp.driveupload/*
-/.tmp.drivedownload/*
+/.tmp.driveupload
+/.tmp.drivedownload
 /data
 /test_Set_annotated
