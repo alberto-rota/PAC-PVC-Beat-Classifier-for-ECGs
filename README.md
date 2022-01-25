@@ -38,13 +38,9 @@ RRR-splitting and later, after choosing a window width
 like in the fixed-width approach, padding or cropping to
 the desired size. This approach makes sure that a single
 R-peak is contained in the window, and it assures a
-Fig. 3. Left: Distribution of the RR-interval in samples. Right: Distribution
-of the distances between abnormal heartbeats. For example, most abnormal
-heartbeats (over 4500) are located 2 beats after the previous abnormal
-heartbeat
 uniform width among all the splittings: to this extent,
 the informative content of the window is reduced by the
-least possible amount
+least possible amount.
 
 ![windows](https://github.com/alberto-rota/PAC-PVC-Beat-Classifier-for-ECGs/blob/main/report/img/windowing.jpg)
 
